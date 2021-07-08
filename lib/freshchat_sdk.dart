@@ -180,7 +180,7 @@ class Freshchat {
 
   /// Returns an instance of FreshchatUser object, pre-populated with current user information
   static Future<FreshchatUser> get getUser async {
-    final Map userDetails = await (_channel.invokeMethod('getUser') as FutureOr<Map<dynamic, dynamic>>);
+    final Map userDetails = await (_channel.invokeMethod('getUser'));
     FreshchatUser user =
         new FreshchatUser(userDetails["externalId"], userDetails["restoreId"]);
     user.setEmail(userDetails["email"]);
